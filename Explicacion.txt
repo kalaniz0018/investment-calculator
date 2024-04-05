@@ -1,0 +1,31 @@
+Levantar el proyecto: npm run dev
+
+En el componente App:
+Se define el estado userInput utilizando el hook useState. Este estado almacena los datos del usuario, como la 
+inversión inicial, la inversión anual, el retorno esperado y la duración.
+Se define la función handleChange que se encarga de actualizar el estado userInput 
+cuando un input en el componente UserInput cambia.
+
+En el componente UserInput:
+Recibe userInput y onChange como props desde el componente App.
+Renderiza los inputs para que el usuario ingrese los datos.
+Cada input tiene un atributo value que se establece en el valor correspondiente del estado userInput.
+Cada input también tiene un evento onChange que llama a la función onChange pasándole el identificador del 
+input y el nuevo valor del input. Esta función está definida en el componente App y se encarga de actualizar 
+el estado userInput.
+En el componente Results:
+
+Recibe input como una prop desde el componente App.
+Muestra los resultados o hace algo con los datos recibidos en la prop input.
+El flujo de datos es el siguiente: cuando un input en el componente UserInput cambia, 
+se dispara el evento onChange, que llama a la función handleChange en el componente App. 
+Esta función actualiza el estado userInput con los nuevos valores. Luego, los nuevos valores 
+del estado userInput se pasan nuevamente al componente UserInput como props, lo que hace que los 
+inputs se actualicen con los nuevos valores. Finalmente, los datos actualizados se pueden usar en el 
+componente Results o en cualquier otro lugar donde se necesiten.
+
+
+
+
+
+
