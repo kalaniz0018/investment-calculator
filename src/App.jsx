@@ -10,6 +10,8 @@ function App() {
     duration: 10,
   });
 
+  const inputIsValid = userInput.duration >= 1;
+
   //En la funcion handleChange toma el estado previo prevUserInput crea un nuevo objeto copinado todas
   // las popiedades (...prevUserInput)
   //y luego actualiza la propiedad especifica con inputIdentifier con  el nuevo valor guardado en newValue.
@@ -26,7 +28,10 @@ function App() {
     <>
       <Header />
       <UserInput userInput={userInput} onChange={handleChange} />
-      <Results input={userInput} />
+      {!inputIsValid && (
+        <p className="center">Please enter a duration greater than zero</p>
+      )}
+      {inputIsValid && <Results input={userInput} />}
     </>
   );
 }
